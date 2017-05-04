@@ -33,10 +33,10 @@ module.exports.set = function(app,conn,fs){
             details['Longtitude'] = parts[1];
             break;
         case "licht":
-            details['Airquality'] = parts[1];
+            details['Light'] = parts[1];
             break;
         case "lucht":
-            details['Light'] = parts[1];
+            details['Airquality'] = parts[1];
             break;
         case "temp":
             details['Temperature'] = parts[1];
