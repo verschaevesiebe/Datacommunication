@@ -36,14 +36,15 @@ socket.on("sendData",function(data){
   document.getElementById("hum").style="height:"+ data[0].Humidity +"%;";
   var light=data[0].Light /10; // schaal van 1000=100%;
     document.getElementById("light").style="height:"+ light +"%;";
-    var temp=Math.abs(data[0].Temperature); // absolute waarde dus zonder -
-    if(temp>50){
-      temp=50;
+    var tempAbs=Math.abs(data[0].Temperature);
+    var temp;
+    if (data[0].Temperature<=0){
+      temp=50-tempAbs;
+    }else{
+      temp= tempAbs + 50;
     }
-    //325
-    var tempMargin = ((data[0].Temperature/2) / 100) * 325;
 
-    document.getElementById("temp").style="height:"+ temp +"%;margin-bottom:"+ tempMargin +"px;";
+    document.getElementById("temp").style="height:"+ temp +"%;";
     myMap(data[0].Latitude,data[0].Longtitude);
 
 
