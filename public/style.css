@@ -99,8 +99,12 @@ article {
   flex-flow: column;
   justify-content: flex-end;
 }
+.barContainer.center{
+  justify-content: center;
+}
 .bar{
   width: 100%;
   background-color: blue;
   transition: height 1s ease;
+  height: 0%;
 }

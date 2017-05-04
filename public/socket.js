@@ -20,6 +20,7 @@ socket.on('connect', function() {
 console.log("connected");
 });
 socket.on("sendData",function(data){
-  document.getElementById("bar").style="height:100%;";
+  document.getElementById("air").style="height:"+ data[0].Airquality +"%;";
+  console.log(data[0].Airquality);
   console.log(data);
 });
