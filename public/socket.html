@@ -11,16 +11,24 @@
 
 <section>
     <div id="map" style="width:45%"></div>
-    <article id="air"></article>
-    <article id="light"></article>
-    <article id="temp"></article>
-    <article id="humidity"></article>
+    <article id="air">
+        <h2>Temperature</h2>
+    </article>
+    <article id="light">
+        <h2>Humidity</h2>
+    </article>
+    <article id="temp">
+        <h2>Pressure</h2>
+    </article>
+    <article id="humidity">
+        <h2>Air Quality</h2>
+    </article>
 </section>
 
-<script src="https://maps.googleapis.com/maps/api/js?callback=myMap"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.js"></script>
 <script src="socket.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?callback=myMap"></script>
 </body>
 
 </html>
