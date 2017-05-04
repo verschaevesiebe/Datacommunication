@@ -2,7 +2,7 @@
  * Created by versc on 4-5-2017.
  */
 
-var socket = io();
+var socket = io.connect('http://81.165.234.45');
 socket.on('connect', function() {
-    document.getElementById("socketio").innerHTML = "socket connected";
+console.log("connected");
 });
