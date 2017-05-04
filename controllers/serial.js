@@ -30,12 +30,10 @@ module.exports.set = function(app,conn,fs){
             var latitude = parts[1];
 
             details['Latitude'] = latitude / 1000;
-            console.log(details['Latitude']);
             break;
         case "LONGITUDE":
             var Longtitude = parts[1];
             details['Longtitude'] = Longtitude / 1000;
-            console.log(details['Longtitude']);
             break;
         case "licht":
             details['Light'] = parts[1];
