@@ -3,14 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <title>Socket Realtime</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div id="long"></div>
-<div id="lat"></div>
-<div id="air"></div>
-<div id="light"></div>
-<div id="temp"></div>
-<div id="humidity"></div>
+
+<h1>Realtime Socket to server</h1>
+
+<section>
+    <div id="map" style="width:45%"></div>
+    <article id="air"></article>
+    <article id="light"></article>
+    <article id="temp"></article>
+    <article id="humidity"></article>
+</section>
+
+<script src="https://maps.googleapis.com/maps/api/js?callback=myMap"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.js"></script>
 <script src="socket.js"></script>
