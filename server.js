@@ -13,7 +13,7 @@ io.on('connection', function(socket) {
         conn.query('SELECT * FROM db_weatherstation.weather_table WHERE ID = (SELECT MAX(ID) FROM db_weatherstation.weather_table)', function(err, rows, fields) {
             if (!err && rows.length > 0){
                         socket.emit("sendData", rows);
-                console.log(rows.length)
+                
             }
             else if (err) {
             }else if (rows.length == 0){
@@ -23,7 +23,7 @@ io.on('connection', function(socket) {
 
 
 
-    }, 3000);
+    }, 10);
 });
 
 var path = require("path");
