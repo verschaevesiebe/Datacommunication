@@ -20,5 +20,6 @@ socket.on('connect', function() {
 console.log("connected");
 });
 socket.on("sendData",function(data){
+    $('.progress').animate({ height: '100%' }, 10000);
   console.log(data);
 });
