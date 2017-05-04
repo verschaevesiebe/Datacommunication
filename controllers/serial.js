@@ -1,4 +1,4 @@
-module.exports.set = function(app,conn){
+module.exports.set = function(app,conn,fs){
   var SerialPort = require('serialport');
 
     var details = [];
@@ -54,6 +54,7 @@ module.exports.set = function(app,conn){
 
     if (Object.keys(details).length === 7){
         Sendtodatabase(details);
+        fs.writeFile('./data/data.json', JSON.stringify(details));
         details = [];
     }
 
@@ -91,6 +92,3 @@ function Sendtodatabase(detailarray){
 
 
 };
-
-
-

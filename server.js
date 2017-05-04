@@ -29,7 +29,7 @@ io.on('connection', function(socket) {
             }
         });
 
-    }, 10000);
+    }, 3000);
 });
 
 var path = require("path");
