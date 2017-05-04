@@ -4,30 +4,24 @@ var server = require('http').Server(app);
 var io = require('socket.io')(server);
 var fs = require('fs');
 server.listen(80);
-
+var mysql = require("./project_modules/mysqlaccess.js");
+var connection = mysql.getConnection();
 io.on('connection', function(socket) {
     console.log("user connected");
     socket.emit('connect', "connected");
     setInterval(function() {
-        data = "test";
-        fs.readFile('./data/data.json', function read(err, data) {
-            if (err) {
-                throw err;
+        connection.query('SELECT * FROM db_weatherstation.weather_table WHERE ID = (SELECT MAX(ID) FROM db_weatherstation.weather_table)', function(err, rows, fields) {
+            if (!err && rows.length > 0){
+                        socket.emit("sendData", rows);
+                console.log(rows.length)
             }
-            var dataToSend;
-            try {
-                dataToSend = JSON.parse(data);
-                socket.emit("sendData", dataToSend);
-            } catch (e) {
-                try {
-                    dataToSend = JSON.parse(data);
-                    socket.emit("sendData", dataToSend);
-                } catch (e) {
-                    console.log("app crashed because of settings file reading. Ignoring read");
-                    errorOnRead = true;
-                }
+            else if (err) {
+            }else if (rows.length == 0){
             }
+
         });
+
+
 
     }, 3000);
 });
@@ -41,7 +35,7 @@ app.use(bodyParser.json());
 
 var controllers = require('./controllers');
 
-controllers.set(app,fs);
+controllers.set(app, fs);
 
 
 app.use(express.static('public'));

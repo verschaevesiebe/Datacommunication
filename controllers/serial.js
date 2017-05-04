@@ -54,7 +54,6 @@ module.exports.set = function(app,conn,fs){
 
     if (Object.keys(details).length === 7){
         Sendtodatabase(details);
-        fs.writeFile('./data/data.json', JSON.stringify(details));
         details = [];
     }
 
