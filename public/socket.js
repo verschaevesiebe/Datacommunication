@@ -20,6 +20,6 @@ socket.on('connect', function() {
 console.log("connected");
 });
 socket.on("sendData",function(data){
-    $('.progress').animate({ height: '100%' }, 10000);
+  document.getElementById("bar").style="height:100%;";
   console.log(data);
 });

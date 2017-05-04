@@ -92,18 +92,15 @@ article {
     margin:0 5px 0 5px;
     overflow:hidden; position:relative;
 }
-
-.content{
-    z-index:9;
-    position:relative;
+.barContainer{
+  width: 100%;
+  height: calc(100% - 75px);
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-end;
 }
-.progress{
-    z-index:1;
-    width:100%;
-    height:0;
-    position:absolute;
-    background:blue;
-    left:0px;
-    top:0px;
+.bar{
+  width: 100%;
+  background-color: blue;
+  transition: height 1s ease;
 }
-
