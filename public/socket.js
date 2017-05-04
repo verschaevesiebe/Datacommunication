@@ -30,6 +30,7 @@ socket.on("sendData",function(data){
     }
     //325
     var tempMargin = ((data[0].Temperature/2) / 100) * 325;
+
     document.getElementById("temp").style="height:"+ temp +"%;margin-bottom:"+ tempMargin +"px;";
 
 });
