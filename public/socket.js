@@ -19,3 +19,6 @@ var socket = io.connect('http://81.165.234.45');
 socket.on('connect', function() {
 console.log("connected");
 });
+socket.on("sendData",function(data){
+  console.log(data);
+});
