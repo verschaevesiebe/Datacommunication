@@ -21,6 +21,16 @@ console.log("connected");
 });
 socket.on("sendData",function(data){
   document.getElementById("air").style="height:"+ data[0].Airquality +"%;";
-  console.log(data[0].Airquality);
+  document.getElementById("hum").style="height:"+ data[0].Humidity +"%;";
+  var light=data[0].Light /10; // schaal van 1000=100%;
+    document.getElementById("light").style="height:"+ light +"%;";
+    var temp=Math.abs(data[0].Temperature); // absolute waarde dus zonder -
+    if(temp>50){
+      temp=50;
+    }
+    //325
+    var tempMargin = ((data[0].Temperature/2) / 100) * 325;
+    document.getElementById("temp").style="height:"+ temp +"%;margin-bottom:"+ tempMargin +"px;";
+
   console.log(data);
 });
