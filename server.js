@@ -7,6 +7,7 @@ var fs = require('fs');
 var path = require("path");
 var bodyParser = require('body-parser');
 
+app.listen(80);
 var controllers = require('./controllers');
 
 app.use(bodyParser.urlencoded({
@@ -24,5 +25,3 @@ app.use(express.static('public'));
 app.get("/", function(req, res) {
     fs.createReadStream("./public/index.html").pipe(res);
 });
-
-app.listen(80);
