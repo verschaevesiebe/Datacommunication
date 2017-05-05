@@ -101,16 +101,12 @@ article {
 }
 .barContainer.center{
   justify-content: center;
+  position: absolute;
 }
-.centerline{
-  height: 2px;
-  color:white;
-  width: 100%;
-  margin-top: 163px;
-}
+
 .bar{
   width: 100%;
-  background-color: blue;
+  background-color: #f2b632;
   transition: height 1s ease;
   height: 0%;
 }
