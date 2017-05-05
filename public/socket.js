@@ -39,15 +39,16 @@ socket.on("sendData",function(data){
   document.getElementById("hum").style="height:"+ data[0].Humidity +"%;";
   var light=data[0].Light /10; // schaal van 1000=100%;
     document.getElementById("light").style="height:"+ light +"%;";
-    var temp=Math.abs(data[0].Temperature); // absolute waarde dus zonder -
-    if(temp>50){
-      temp=50;
-    }
-    //325
-    var tempMargin = ((data[0].Temperature/2) / 100) * 325;
+    var tempAbs=Math.abs(data[0].Temperature); // absolute waarde dus zonder -
+    var tempHeight;
+if (data[0].Temperature<0){
+  tempHeight = 50 - tempAbs;
+}else{
+  tempHeight = 50+tempAbs;
+}
 lat = data[0].Latitude;
 lng = data[0].Longtitude;
-    document.getElementById("temp").style="height:"+ temp +"%;margin-bottom:"+ tempMargin +"px;";
+    document.getElementById("temp").style="height:"+ tempHeight +"%;";
 
 });
 
