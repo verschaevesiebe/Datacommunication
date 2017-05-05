@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 });
 
 var lat,lng;
-var check = false;
+
 
 function myMap(lat , lng) {
     var mapOptions = {
@@ -49,11 +49,7 @@ lat = data[0].Latitude;
 lng = data[0].Longtitude;
     document.getElementById("temp").style="height:"+ temp +"%;margin-bottom:"+ tempMargin +"px;";
 
-    if (lat & lng !== null && check === false){
-        myMap(lat,lng);
-        check = true;
-    }
-
 });
 
-setInterval(function(){ myMap(lat,lng); }, 10000);
+
+setInterval(function(){ myMap(lat,lng); }, 1000);
