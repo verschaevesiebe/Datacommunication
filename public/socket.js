@@ -6,6 +6,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
     console.log("DOM fully loaded and parsed");
 });
 
+var lat,lng
+
 function myMap(lat , lng) {
     var mapOptions = {
         center: new google.maps.LatLng(lat, lng),
@@ -42,9 +44,11 @@ socket.on("sendData",function(data){
     }
     //325
     var tempMargin = ((data[0].Temperature/2) / 100) * 325;
-
+lat = data[0].Latitude;
+lng = data[0].Longtitude;
     document.getElementById("temp").style="height:"+ temp +"%;margin-bottom:"+ tempMargin +"px;";
-    myMap(data[0].Latitude,data[0].Longtitude);
 
 
 });
+
+setInterval(function(){ myMap(lat,lng); }, 3000);
