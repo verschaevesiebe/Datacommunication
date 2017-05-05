@@ -6,7 +6,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
     console.log("DOM fully loaded and parsed");
 });
 
-var lat,lng
+var lat,lng;
+var check = false;
 
 function myMap(lat , lng) {
     var mapOptions = {
@@ -48,7 +49,12 @@ lat = data[0].Latitude;
 lng = data[0].Longtitude;
     document.getElementById("temp").style="height:"+ temp +"%;margin-bottom:"+ tempMargin +"px;";
 
+    if (lat & lng !== null && check === false){
+        myMap(lat,lng);
+        check = true;
+    }
 
 });
+
 
 setInterval(function(){ myMap(lat,lng); }, 3000);
