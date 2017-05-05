@@ -57,4 +57,4 @@ lng = data[0].Longtitude;
 });
 
 
-setInterval(function(){ myMap(lat,lng); }, 3000);
+setInterval(function(){ myMap(lat,lng); }, 10000);
