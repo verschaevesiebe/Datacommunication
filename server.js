@@ -12,7 +12,7 @@ io.on('connection', function(socket) {
     console.log("user connected");
     socket.emit('connect', "connected");
     setInterval(function() {
-        conn.query('SELECT * FROM db_weatherstation.weather_table WHERE ID = (SELECT MAX(ID) FROM db_weatherstation.weather_table)', function(err, rows, fields) {
+        conn.query('SELECT * FROM NMCTData.nmct_table WHERE ID = (SELECT MAX(ID) FROM NMCTData.nmct_table)', function(err, rows, fields) {
             if (!err && rows.length > 0){
                         socket.emit("sendData", rows);
                 

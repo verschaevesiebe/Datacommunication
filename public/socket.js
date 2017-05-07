@@ -27,7 +27,7 @@ function myMap(lat , lng) {
     marker.setMap(map);
     }
 
-var socket = io.connect('localhost');
+var socket = io.connect('http://81.165.234.45/');
 socket.on('connect', function() {
 console.log("connected");
 });
