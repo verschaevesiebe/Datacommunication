@@ -13,7 +13,7 @@ app.get('/api/', function(req, res) {
         console.log(rows.length)
     }
     else if (err) {
-      res.json('Failed to fetch rows from the weather table.');
+      res.json('Failed to fetch rows from the table.');
     }else if (rows.length === 0){
         res.json({"No Values found": 0});
     }
@@ -30,7 +30,7 @@ app.get('/api/', function(req, res) {
                 console.log(rows.length)
             }
             else if (err) {
-                res.json('Failed to fetch rows from the weather table.');
+                res.json('Failed to fetch rows from the table.');
             }else if (rows.length === 0){
                 res.json({"No Values found": 0});
             }
