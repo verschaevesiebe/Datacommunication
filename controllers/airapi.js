@@ -24,7 +24,7 @@ app.get('/api/', function(req, res) {
 
     app.get('/api/latest', function(req, res) {
 
-        connection.query('SELECT * FROM NMCTData.nmct_table WHERE ID = (SELECT MAX(ID) FROM db_weatherstation.nmct_table)', function(err, rows, fields) {
+        connection.query('SELECT * FROM NMCTData.nmct_table WHERE ID = (SELECT MAX(ID) FROM NMCTData.nmct_table)', function(err, rows, fields) {
             if (!err && rows.length > 0){
                 res.json(rows);
                 console.log(rows.length)
