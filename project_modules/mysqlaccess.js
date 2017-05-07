@@ -24,6 +24,6 @@ connection.connect(function (error) {
 });
  */
 if (connection){
-    console.log("Dikke Connectie gestart");
+    console.log("Connectie gestart");
 }
 
