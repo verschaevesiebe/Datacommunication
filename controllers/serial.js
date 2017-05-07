@@ -80,7 +80,7 @@ function Sendtodatabase(detailarray){
     });
     */
 
-    var sql = "INSERT INTO db_weatherstation.weather_table (`Latitude`,`Longtitude`,`Light`,`Airquality`,`Temperature`,`Pressure`,`Humidity`,`Date`) VALUES ('" + detailarray['Latitude'] + "','" + detailarray['Longtitude'] + "','" + detailarray['Light'] + "','" + detailarray['Airquality'] + "','" + detailarray['Temperature'] + "','" + detailarray['Pressure'] + "','" + detailarray['Humidity'] + "','" + detailarray['Date'] + "')";
+    var sql = "INSERT INTO NMCTData.nmct_table (`Latitude`,`Longtitude`,`Light`,`Airquality`,`Temperature`,`Pressure`,`Humidity`,`Date`) VALUES ('" + detailarray['Latitude'] + "','" + detailarray['Longtitude'] + "','" + detailarray['Light'] + "','" + detailarray['Airquality'] + "','" + detailarray['Temperature'] + "','" + detailarray['Pressure'] + "','" + detailarray['Humidity'] + "','" + detailarray['Date'] + "')";
 
     conn.query(sql, function(err, rows, fields) {
      if (!err){

@@ -27,7 +27,7 @@ function myMap(lat , lng) {
     marker.setMap(map);
     }
 
-var socket = io.connect('http://81.165.234.45');
+var socket = io.connect('localhost');
 socket.on('connect', function() {
 console.log("connected");
 });
@@ -39,7 +39,7 @@ socket.on("sendData",function(data){
   document.getElementById("hum").style="height:"+ data[0].Humidity +"%;";
   var light=data[0].Light /10; // schaal van 1000=100%;
     document.getElementById("light").style="height:"+ light +"%;";
-    document.getElementById("tempvalue").innerHTML = data[0].Temperature + "°";
+    document.getElementById("tempvalue").innerHTML = data[0].Temperature + "°C";
     document.getElementById("lightvalue").innerHTML = data[0].Light + "lux";
     document.getElementById("humvalue").innerHTML = data[0].Humidity + "%";
     document.getElementById("airvalue").innerHTML = data[0].Airquality + "%";

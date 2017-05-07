@@ -6,6 +6,8 @@ var fs = require('fs');
 server.listen(80);
 var mysql = require("./project_modules/mysqlaccess.js");
 var conn = mysql.getConnection();
+
+
 io.on('connection', function(socket) {
     console.log("user connected");
     socket.emit('connect', "connected");
@@ -16,7 +18,7 @@ io.on('connection', function(socket) {
                 
             }
             else if (err) {
-            }else if (rows.length == 0){
+            }else if (rows.length === 0){
             }
 
         });
